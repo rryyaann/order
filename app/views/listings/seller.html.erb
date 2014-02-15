@@ -4,7 +4,7 @@
     <th class="center">Name</th>
     <th class="center">Description</th>
     <th class="center">Price</th>
-    <th class="center">Actions</th>
+    <th class="center">Manage</th>
   </tr>  
 
   <% @listings.each do |listing| %>
@@ -15,7 +15,7 @@
       <td class="center"><%= number_to_currency(listing.price) %></td>
       <td class="center">
         <div class="btn-group">
-          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
             Action <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
