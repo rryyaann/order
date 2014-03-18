@@ -2,6 +2,14 @@ class BuysController < ApplicationController
   before_action :set_buy, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+  def sales
+    @buys = Buy.all.where(seller: current_user).order("created_at DESC")
+  end
+
+  def purchases
+    @buys = Buy.all.where(buyer: current_user).order("created_at DESC")
+  end
+
   # GET /buys
   # GET /buys.json
   def index
