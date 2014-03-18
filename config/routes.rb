@@ -1,7 +1,10 @@
 Order::Application.routes.draw do
- 
+
   devise_for :users
-  resources :listings
+  resources :listings do
+    resources :buys
+  end
+
 
   get "about" => "pages#about"
   get "contact" => "pages#contact"
