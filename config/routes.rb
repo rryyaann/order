@@ -2,7 +2,7 @@ Order::Application.routes.draw do
 
   devise_for :users
   resources :listings do
-    resources :buys
+    resources :buys, only: [:new, :create]
   end
 
 
